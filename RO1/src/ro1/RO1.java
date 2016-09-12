@@ -50,15 +50,15 @@ public class RO1 {
                     
                Test Montest = new Test(weightOb,valObj ,nbObject,maxW);
                
-               
-             int somme=0;
+             int sommeValue = 0  
+             int sommeWeight=0;
               int t[] = {1,0,1,1,0};
              for (int i = 0 ;  i<t.length;i++)
              {
                  if (t[i] == 1){
                      
-                    somme = (int)Montest.getWObject().get(i)+somme; 
-                    
+                    sommeWeight = (int)Montest.getWObject().get(i)+sommeWeight; 
+                    sommeValue = (int)Montest.getVObject().get(i)+sommeValue; 
                  }
                 
              }
@@ -66,12 +66,12 @@ public class RO1 {
              
              if (somme > Montest.getMawWeight()){
                  
-                 double calcul = Montest.getBeta()*(somme-Montest.getMawWeight());
+            double calcul = sommeValue - Montest.getBeta()*(somme-Montest.getMawWeight());
              System.out.println(calcul);     
                  
              }
              else {
-               System.out.println("ok");   
+               System.out.println(sommeValue);   
                  
              }
        
